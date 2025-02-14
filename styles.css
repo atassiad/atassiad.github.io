@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff;
+    background-color: #D8D0C4;
     padding: 1rem 1rem;
     margin: 0px 0px;
 }
@@ -22,7 +22,7 @@ html, body {
 
 .main-layout > div {
     border-radius: 1rem;
-    background-color: #d3bd9a;
+    background-color: #A28A74;
 }
 
 .navbar {
@@ -41,16 +41,22 @@ html, body {
     color: black;
 }
 
-.navbar > button {
+.resume-button {
     margin-right: 1.5rem;
     padding: 0.9rem 1.5rem;
-    background-color: #a28f70;
-    border: 0px solid;
+    background-color: #D8D0C4;
+    border: 2px solid;
     border-radius: 0.5rem;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     color: black;
     font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.25s ease-in-out;
+}
+
+.resume-button:hover {
+    transform: scale(1.1);
 }
 
 
@@ -65,8 +71,19 @@ html, body {
 .middle-left-container > img {
     height: 100px;
     width: 100px;
-    padding-top: 1rem;
-    margin-left: 25rem;
+    margin-top: 5%;
+    margin-left: 75%;
+    transform-origin: 50% 50%;  
+    animation: slowRotation 30s linear infinite;
+}
+
+@keyframes slowRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .middle-left-container > p {
@@ -74,7 +91,7 @@ html, body {
     margin-right: 4rem;
     margin-left: 1rem;
     text-align: left;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -100,37 +117,131 @@ html, body {
     margin-right: 4rem;
     margin-left: 1rem;
     text-align: left;
-    font-size: 1.25rem;
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
 }
 
 .personal-picture {
     grid-area: 2 / 6 / 7 / 9;
-    background-color: #a28f70 !important;
-    background-image: url(./images/linus.png);
-    background-size: contain; 
+    background-color: #CBAA83 !important;
+    background-image: url(./images/thanos_park.jpg);
+    background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
 }
 
 .contact-information {
     grid-area: 7 / 5 / 11 / 9;
-    background-color: #a28f70 !important;
-    display: flex;
-    flex-direction: column;
+    background-color: #CBAA83 !important;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     align-items: center;
-    justify-content: center;
+    justify-items: center;
+}
+
+.contact-information > a {
+    grid-area: 1 / 4 / 2 / 5;
+}
+.contact-information > a > img {
+    height: 4rem;
+    width: 4rem;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    transition: 0.3s ease-in;
+}
+
+.contact-information > a > img:hover {
+    transform: scale(1.2) skew(-5deg);
+}
+
+.contact-information > h1 {
+    grid-area: 4 / 1 / 5 / 3;
+    padding: 0px 0px;
+    margin: 0px 0px;
 }
 
 .middle-right-container {
     grid-area: 2 / 9 / 10/ 13;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .middle-right-container > h1 {
-    margin-left: 1rem;
+    margin: 5% 0 0 5%;
+    flex-shrink: 1;
 }
+
+/* Carousel For Projects */
+
+.carousel-container {
+    flex: 5 1 0;
+    display:flex;
+    align-items: center;
+}
+
+.left-button, .right-button {
+    flex: 0.25 1 0;
+    font-size: 2rem;
+    padding: 8px 8px;
+    margin: 0px 2px;
+    text-align: center;
+    position: relative;
+    bottom: 5%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
+
+.carousel-content {
+    display: flex;
+    flex: 5 1 0;
+}
+.mySlides {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mySlides > img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 2rem;
+}
+
+.mySlides > a > button {
+    cursor: pointer;
+    margin-top: 0.25rem;
+    padding: 0.9rem 1.5rem;
+    background-color: #D8D0C4;
+    border: 2px solid;
+    border-radius: 0.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    color: black;
+    font-size: 1rem;
+}
+.mySlides > a > button:hover {
+    transform: scale(1.1);
+}
+
+.right-button:hover, .left-button:hover {
+    background-color: #D8D0C4;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* End Carousel */ 
 
 .personal-links {
     grid-area: 10 / 9 / 11 / 13;
@@ -144,4 +255,9 @@ html, body {
 .personal-links > a > img{
     height: 3rem;
     width: 3rem;
+    transition: transform 0.25s ease-in-out;
+}
+
+.personal-links > a > img:hover {
+    transform: scale(1.1) skewX(-5deg);
 }

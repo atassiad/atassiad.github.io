@@ -10,34 +10,61 @@
     <div class="main-layout">
         <div class="navbar">
             <h1> Athanasios Tassiadamis </h1>
-            <button> DOWNLOAD RESUME </button>
+            <a href="./Website-Portfolio-Resume.pdf" target="_blank" class="resume-button">View My Resume</a>
         </div>
+
         <div class="personal-picture"></div>
         <div class="middle-left-container">
             <img src="./images/flower1.svg">
             <p> Computer Science Student and Research at UNLV</p>
         </div>
+
         <div class="bottom-left-container">
             <img src="./images/programmer-software-engineer-coder-software-developer-svgrepo-com.svg">
             <p> Computer Science student at the University of Nevada, Las Vegas, with a minor in Mathematics and Economics. My technical expertise spans machine learning, data science, real-time applications, and software engineering, with projects ranging from deep learning models to full-stack web development. </p>
         </div>
+
         <div class="contact-information">
+            <a href="mailto:atassiadamis@gmail.com" target="_blank">
+                <img src="./images/email-18-svgrepo-com.svg">
+            </a>
             <h1> Contact Me </h1>
         </div>
+
         <div class="middle-right-container">
-            <h1> Projects (TO-DO) </h1>
+            <h1> My Projects </h1>
+            <div class="carousel-container">
+                <a class="left-button" onclick="plusSlides(-1)">&#10094;</a>
+                <div class="carousel-content">
+                    <div class="mySlides fade">
+                        <img src="./images/stock_crypto_visualizer.png">
+                        <a href="https://github.com/atassiad/Stock-Visualization-w-Django" target="_blank">
+                            <button> GO TO </button> 
+                        </a>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="./images/ml_stroke.png">
+                        <a href="https://github.com/atassiad/ML-for-Stroke-Prediction" target="_blank">
+                            <button> GO TO </button> 
+                        </a>
+                    </div>
+                </div>
+                <a class="right-button" onclick="plusSlides(+1)">&#10095;</a>
+            </div>
         </div>
+
         <div class="personal-links">
-            <a href="https://github.com/atassiad">
+            <a href="https://github.com/atassiad" target="_blank">
                 <img src="./images/github-142-svgrepo-com.svg">
             </a>
-            <a href="https://linkedin.com/in/athanasios-t-8a17b4294">
+            <a href="https://linkedin.com/in/athanasios-t-8a17b4294" target="_blank">
                 <img src="./images/linkedin-svgrepo-com.svg">
             </a>
-            <a href="https://www.google.com">
-                <img src="./images/computer-svgrepo-com.svg">
+            <a href="https://aiclub.cs.unlv.edu/" target="_blank">
+                <img src="./images/robot-svgrepo-com.svg">
             </a>
         </div>
     </div>
+    <script src="./index.js"></script>
 </body>
 </html>
